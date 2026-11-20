@@ -25,6 +25,27 @@ Inspired by classic 8-bit video games, Steak Master combines nostalgic visuals w
 - Local session persistence
 - Mobile-friendly design
 
+
+## Screenshots
+
+### Title Screen
+The retro arcade-inspired welcome screen.
+
+![Steak Master Title Screen](screenshots/title-screen.png)
+
+### Steak Configuration
+Choose your steak cut, thickness, doneness, and cooking method.
+
+![Steak Master Setup Screen](screenshots/setup-screen.png)
+
+### Flip Prompt
+A classic arcade-style checkpoint during cooking.
+
+![Steak Master Flip Screen](screenshots/flip-screen.png)
+
+---
+
+
 ## Technology Stack
 
 **Frontend**
