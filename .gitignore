@@ -1,0 +1,30 @@
+
+# Node.js dependencies
+node_modules/
+mobile/node_modules/
+
+# Frontend build output
+dist/
+build/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# .NET build output
+bin/
+obj/
+
+# Local development files
+.vs/
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
