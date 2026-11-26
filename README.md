@@ -99,7 +99,7 @@ same formula locally in `cooking.ts`.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/steak-master.git
+git clone https://github.com/tmburbeck/steak-master.git
 cd steak-master
 ```
 
