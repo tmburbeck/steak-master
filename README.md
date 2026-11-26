@@ -63,6 +63,31 @@ A classic arcade-style checkpoint during cooking.
 - Visual Studio Code
 - Git and GitHub
 
+## Project Structure
+
+```
+backend/SteakMaster.Api/
+  Program.cs                     API setup and endpoints (/health, /api/cooking/plan)
+  Cooking/CookingModels.cs       Request and response shapes
+  Cooking/CookingPlanCalculator.cs  Cooking-time formula
+
+mobile/src/
+  App.tsx                        Chooses which screen to show for the current stage
+  hooks/useCookingSession.ts     Cooking flow: stages, timers, alerts, saved progress
+  hooks/usePreferences.ts        Settings that persist between visits
+  components/                    One file per screen and panel
+  cooking.ts                     Offline cooking-time formula and temperature checks
+  options.ts                     Cut, doneness and method lists, plus defaults
+  storage.ts                     Reading and writing localStorage
+  api.ts                         Calls to the backend
+  alerts.ts                      Retro beep and vibration
+  notifications.ts               Background notifications (native and browser)
+  theme.css                      Retro styling
+```
+
+The app works without the backend: if the API is unreachable, it uses the
+same formula locally in `cooking.ts`.
+
 ## Getting Started
 
 ### Prerequisites

@@ -1,8 +1,17 @@
+/* ==========================================================================
+   Steak Master theme: a retro, 8-bit inspired look.
+   Colors are defined once as variables below and reused throughout.
+   ========================================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* BASE: colors, fonts and page background */
 :root { --navy:#171b31; --cream:#f7edd8; --coral:#f06458; --muted:#77798a; --ion-background-color:var(--navy); --ion-text-color:var(--cream); --ion-font-family:Arial,sans-serif; }
 * { box-sizing:border-box; }
 body { background:var(--navy); color:var(--cream); }
 ion-content { --background:var(--navy); }
+
+/* LAYOUT: page frame, header and shared screen styles */
 .app-shell { min-height:100%; max-width:520px; margin:0 auto; padding:calc(env(safe-area-inset-top) + 22px) 26px calc(env(safe-area-inset-bottom) + 18px); display:flex; flex-direction:column; }
 .topbar { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #4a4c5d; padding-bottom:18px; }
 .brand,.eyebrow,.fine-print,.text-button,.primary-button { font-family:'Press Start 2P',monospace; }
@@ -11,10 +20,14 @@ ion-content { --background:var(--navy); }
 .screen { flex:1; padding-top:36px; display:flex; flex-direction:column; }
 .eyebrow { color:var(--coral); font-size:8px; line-height:1.8; letter-spacing:1px; margin:0 0 18px; }
 h1 { font-family:'Press Start 2P',monospace; font-size:clamp(22px,7vw,34px); line-height:1.55; margin:0 0 24px; font-weight:400; }
+
+/* PIXEL STEAK ARTWORK */
 .steak-art { height:205px; display:flex; flex-direction:column; justify-content:center; align-items:center; margin:8px 0 24px; color:var(--coral); }
 .steam { font-size:30px; color:var(--muted); letter-spacing:8px; height:50px; }
 .pan { width:220px; height:92px; border:8px solid #77798a; border-radius:50%; background:#292d43; display:flex; justify-content:center; align-items:center; font-size:24px; color:var(--muted); box-shadow:0 12px 0 #101426; }
 .pan span { color:var(--coral); font-size:48px; text-shadow:3px 3px #9f3e3a; }
+
+/* SETUP FORM: dropdowns and thickness slider */
 .settings { border-top:1px solid #45485b; border-bottom:1px solid #45485b; padding:8px 0; margin-bottom:22px; }
 ion-item { --background:transparent; --color:var(--cream); --padding-start:0; --inner-padding-end:0; --min-height:48px; font-size:13px; }
 ion-item ion-label { font-family:'Press Start 2P',monospace; font-size:8px !important; color:var(--muted) !important; }
@@ -22,8 +35,12 @@ ion-select { max-width:58%; font-size:13px; }
 .range-row { display:flex; justify-content:space-between; padding:12px 0 0; font-size:11px; color:var(--muted); font-family:'Press Start 2P',monospace; }
 .range-row strong { color:var(--cream); }
 ion-range { --bar-background:#4a4c5d; --bar-background-active:var(--coral); --knob-background:var(--cream); --pin-background:var(--coral); padding:0 4px 8px; }
+
+/* BUTTONS */
 .primary-button { --background:var(--coral); --background-activated:#d94f48; --color:var(--navy); --border-radius:3px; --box-shadow:0 4px 0 #a83d39; height:54px; font-size:10px; letter-spacing:.2px; margin:8px 0 0; }
 .primary-button span { margin-left:10px; font-size:16px; }
+
+/* TIMER, FLIP AND COMPLETE SCREENS */
 .timer-screen { align-items:center; text-align:center; }
 .timer { font-family:'Press Start 2P',monospace; font-size:clamp(36px,12vw,58px); margin:16px 0 0; letter-spacing:-3px; }
 .compact { height:180px; margin:18px 0 12px; }
@@ -31,18 +48,24 @@ ion-range { --bar-background:#4a4c5d; --bar-background-active:var(--coral); --kn
 .event-screen { align-items:stretch; }
 .event-screen h1 { font-size:clamp(38px,13vw,64px); color:var(--coral); text-align:center; margin:22px 0 10px; }
 .event-screen .steak-art { flex:1; min-height:180px; }
+
+/* FOOTER: start-over button and progress dots */
 .text-button { background:none; border:0; color:var(--muted); font-size:8px; padding:18px 8px; }
 .footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid #45485b; margin-top:24px; }
 .stage-dots { display:flex; gap:10px; }
 .stage-dots i { width:10px; height:10px; border:1px solid var(--cream); display:block; }
 .stage-dots i.active { background:var(--coral); border-color:var(--coral); }
+
+/* TEMPERATURE CHECK SCREEN */
 .temp-entry { border-bottom:2px solid var(--coral); margin:30px auto; width:180px; }
 .temp-entry input { width:100%; background:transparent; border:0; outline:0; color:var(--cream); font:28px 'Press Start 2P',monospace; text-align:center; padding:14px; }
 .safety-note { color:var(--muted); font-size:12px; line-height:1.6; margin:0 0 20px; }
+
+/* SMALL PRINT AND STATUS MESSAGES */
 .fine-print { color:#77798a; text-align:center; font-size:7px; line-height:1.8; margin:22px 0 0; }
 .status-message { color:var(--coral); font-size:11px; line-height:1.6; margin:0 0 12px; }
 
-
+/* WIDER SCREENS (tablets and desktops): two-column layout */
 @media (min-width: 700px) {
   .app-shell { max-width: 1080px; padding: 36px 44px 24px; }
   .topbar { padding-bottom: 22px; }
@@ -81,20 +104,22 @@ ion-range { --bar-background:#4a4c5d; --bar-background-active:var(--coral); --kn
   .event-screen { max-width: 700px; width: 100%; margin: 0 auto; }
   .footer { padding-top: 12px; }
 }
+
+/* MEDIUM SCREENS: tighter spacing between the two columns */
 @media (min-width: 700px) and (max-width: 850px) {
   .app-shell { padding-left: 28px; padding-right: 28px; }
   .screen:not(.timer-screen):not(.event-screen) { grid-template-columns: minmax(0,1fr) minmax(280px, 1fr); column-gap: 24px; }
   .timer-screen { column-gap: 24px; }
 }
+
+/* VERY NARROW PHONES */
 @media (max-width: 360px) {
   .app-shell { padding-left: 16px; padding-right: 16px; }
   .brand { font-size: 9px; }
   .stage-dots { gap: 6px; }
 }
 
-
-
-
+/* DROPDOWN POP-UPS (Ionic alert used by the setup dropdowns) */
 ion-alert.steak-select-alert {
   --background: #171d30;
   --color: #f1e8d4;
@@ -124,7 +149,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   background: #f3a58e;
 }
 
-/* SETTINGS BUTTON */
+/* TIPS AND SETTINGS BUTTONS */
 
 .settings-header {
   display: flex;
@@ -220,7 +245,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   }
 }
 
-/* SETTINGS — TEMPERATURE SELECTOR */
+/* SETTINGS: dropdown selects */
 
 .settings-select {
   background: #171d30;
@@ -243,8 +268,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   outline-offset: 2px;
 }
 
-
-/* TEMPERATURE UNIT DISPLAY */
+/* TEMPERATURE INPUT: °F / °C label inside the field */
 
 .temp-entry {
   position: relative;
@@ -260,7 +284,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   pointer-events: none;
 }
 
-/* SETTINGS — ON/OFF TOGGLE */
+/* SETTINGS: ON/OFF toggles */
 
 .settings-toggle {
   background: #171d30;
@@ -288,8 +312,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   outline-offset: 3px;
 }
 
-
-/* TEMPERATURE CHECK FEEDBACK */
+/* TEMPERATURE FEEDBACK: safe / not yet safe message */
 
 .temperature-feedback {
   background: #222a40;
@@ -315,7 +338,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   margin: 0;
 }
 
-/* STEAK TIPS */
+/* STEAK TIPS PANEL */
 
 .steak-tip {
   padding: 12px 0;
@@ -341,7 +364,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   margin: 0;
 }
 
-/* RETRO INTRO SCREEN */
+/* INTRO (TITLE) SCREEN */
 
 .intro-screen {
   min-height: 75vh;
@@ -360,22 +383,6 @@ ion-alert.steak-select-alert .alert-radio-inner {
   letter-spacing: 2px;
 }
 
-.intro-art {
-  margin: 24px 0 8px;
-  color: #f1e8d4;
-  font-size: 48px;
-}
-
-.intro-steam {
-  font-size: 24px;
-  color: #f3a58e;
-  margin-bottom: 8px;
-}
-
-.intro-pan span {
-  color: #f3a58e;
-}
-
 .intro-title {
   color: #f1e8d4;
   font-size: clamp(36px, 8vw, 64px);
@@ -389,7 +396,6 @@ ion-alert.steak-select-alert .alert-radio-inner {
   font-size: 11px;
   letter-spacing: 2px;
 }
-
 
 .intro-start {
   width: 100%;
@@ -407,7 +413,6 @@ ion-alert.steak-select-alert .alert-radio-inner {
   cursor: pointer;
 }
 
-
 .intro-start:hover {
   background: #f1e8d4;
 }
@@ -424,7 +429,7 @@ ion-alert.steak-select-alert .alert-radio-inner {
   opacity: 0.7;
 }
 
-/* Retro arcade blinking prompt */
+/* BLINKING PROMPT: the small heading on the Flip and Complete screens blinks like an arcade game */
 .event-screen .eyebrow {
   animation: arcade-blink 1.2s steps(2, start) infinite;
 }
